@@ -5,7 +5,7 @@
         {
             "type": "vehicle-signal-interface",
             "config": {
-                "src": "vss_3.1.1_democase.json",
+                "src": "app/vss_3.1.1_democase.json",
                 "datapoints": {
                     "required": [
                         {
