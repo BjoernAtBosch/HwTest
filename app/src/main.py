@@ -60,7 +60,8 @@ class PassengerWelcomeApp(VehicleApp):
 
         if door_status:
             await self.Vehicle.set_many().add(self.driver_seat.Position, 1000).add(
-                self.Vehicle.Cabin.Lights.InteriorLight.Mode, str(Mode.NIGHT_RIDER.value)
+                self.Vehicle.Cabin.Lights.InteriorLight.Mode,
+                str(Mode.NIGHT_RIDER.value),
             ).add(self.Vehicle.Cabin.Lights.InteriorLight.Red, 0).add(
                 self.Vehicle.Cabin.Lights.InteriorLight.Green, 255
             ).add(
@@ -69,11 +70,9 @@ class PassengerWelcomeApp(VehicleApp):
                 self.Vehicle.Body.Lights.Beam.Low.IsOn, True
             ).apply()
         else:
-            await self.Vehicle.set_many().add(
-                self.driver_seat.Position, 500
-            ).add(self.Vehicle.Cabin.Lights.InteriorLight.Mode, str(Mode.RAINBOW.value)).add(
-                self.Vehicle.Cabin.Lights.InteriorLight.Red, 255
-            ).add(
+            await self.Vehicle.set_many().add(self.driver_seat.Position, 500).add(
+                self.Vehicle.Cabin.Lights.InteriorLight.Mode, str(Mode.RAINBOW.value)
+            ).add(self.Vehicle.Cabin.Lights.InteriorLight.Red, 255).add(
                 self.Vehicle.Cabin.Lights.InteriorLight.Green, 0
             ).add(
                 self.Vehicle.Cabin.Lights.InteriorLight.Blue, 0
