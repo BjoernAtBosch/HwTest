@@ -1,6 +1,6 @@
 {
     "manifestVersion": "v3",
-    "name": "SampleApp",
+    "name": "PassengerWelcomeApp",
     "interfaces": [
         {
             "type": "vehicle-signal-interface",
@@ -9,8 +9,32 @@
                 "datapoints": {
                     "required": [
                         {
-                            "path": "Vehicle.Speed",
+                            "path": "Vehicle.Body.Lights.Beam.Low.IsOn",
+                            "access": "write"
+                        },
+                        {
+                            "path": "Vehicle.Cabin.Door.Row1.Left.IsOpen",
                             "access": "read"
+                        },
+                        {
+                            "path": "Vehicle.Cabin.Lights.InteriorLight.Mode",
+                            "access": "write"
+                        },
+                        {
+                            "path": "Vehicle.Cabin.Lights.InteriorLight.Mode",
+                            "access": "write"
+                        },
+                        {
+                            "path": "Vehicle.Cabin.Lights.InteriorLight.Mode",
+                            "access": "write"
+                        },
+                        {
+                            "path": "Vehicle.Cabin.Lights.InteriorLight.Mode",
+                            "access": "write"
+                        },
+                        {
+                            "path": "Vehicle.Cabin.Seat.Row1.Pos1.Position",
+                            "access": "write"
                         }
                     ]
                 }
@@ -20,11 +44,7 @@
             "type": "pubsub",
             "config": {
                 "reads": [
-                    "sampleapp/getSpeed"
-                ],
-                "writes": [
-                    "sampleapp/getSpeed/response",
-                    "sampleapp/currentSpeed"
+                    "door_open", "door_closed"
                 ]
             }
         }
